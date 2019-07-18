@@ -21,7 +21,7 @@ allprojects {
     }
 }
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 
 dependencies {
@@ -40,7 +40,6 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 28
-        applicationId 'com.TestPackage.Slingshot'
         ndk {
             abiFilters 'armeabi-v7a', 'x86'
         }
@@ -78,16 +77,4 @@ android {
         doNotStrip '*/x86/*.so'
     }
 
-
-    bundle {
-        language {
-            enableSplit = false
-        }
-        density {
-            enableSplit = false
-        }
-        abi {
-            enableSplit = true
-        }
-    }
 }
